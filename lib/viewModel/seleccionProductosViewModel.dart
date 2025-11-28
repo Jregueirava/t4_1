@@ -3,6 +3,9 @@ import 'package:t4_1/model/lineaProducto.dart';
 import 'package:t4_1/model/pedido.dart';
 import 'package:t4_1/model/producto.dart';
 
+import '../model/lineaProducto.dart';
+import '../model/producto.dart';
+
 class Seleccionproductosviewmodel {
 
   //Carta
@@ -22,13 +25,29 @@ class Seleccionproductosviewmodel {
   final Map<Producto, int> cantidades = {};
 
   //Transformar map a lista
-  //List<LineaProducto> cosntruirLineas();
+  List<LineaProducto> cosntruirLineas(){
+    return cantidades.entries
+      .where((entry) => entry.value >0)
+      .map((entry) => LineaProducto(producto: entry.key, cantidad: entry.value,
+      ))
+      .toList();
+  }
 
+  //Incrementar cantidad
+  void incrementar(Producto producto){
+    cantidades[producto] = (cantidades[producto]?? 0) + 1;
+  }
 
-  /*void cosntruirLineas(){
-    return Pedido(producto: producto, cantidad: List.from(LineaProducto));
-  }*/
-
-  //Mostrar carta
-  //ListView.builde
+  //Decrementar cntidad
+  void decrementar(Producto producto){
+      final actual = cantidades[producto]?? 0;
+      if(actual > 0){
+        cantidades[producto] = actual - 1;
+      }
+  }
+  
+  //Cantidad producto
+  int getCantidad(Producto producto){
+    return cantidades[producto] ?? 0;
+  }
 }
