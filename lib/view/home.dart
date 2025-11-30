@@ -10,15 +10,15 @@ import '../model/producto.dart';
 import '../viewModel/homeViewModel.dart';
 
 
-class HomePage extends StatefulWidget{
-  const HomePage({super.key});
+class Home extends StatefulWidget{
+  const Home({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Home> createState() => _HomePageState();
 
 }
 
-class _HomePageState extends State<HomePage>{
+class _HomePageState extends State<Home>{
   final Homeviewmodel viewModel = Homeviewmodel();
 
   @override
