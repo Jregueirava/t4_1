@@ -1,12 +1,14 @@
-import 'package:t4_1/model/lineaProducto.dart';
+
+
+import 'lineaProducto.dart';
 
 class Pedido {
-  final String mesaONobre;
+  final String mesaONombre;
   final List<LineaProducto> lineas;
 
   const Pedido({
-    required this.mesaONobre,
-    required this.lineas,
+    required this.mesaONombre,
+    required this.lineas, required String mesaONobre,
   });
 
   int get numProductos => lineas.fold(0, (acc, linea) => acc + linea.cantidad);

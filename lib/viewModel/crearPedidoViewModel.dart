@@ -1,5 +1,7 @@
-import 'package:t4_1/model/lineaProducto.dart';
-import 'package:t4_1/model/pedido.dart';
+
+
+import '../model/lineaProducto.dart';
+import '../model/pedido.dart';
 
 class Crearpedidoviewmodel {
 
@@ -18,6 +20,6 @@ class Crearpedidoviewmodel {
   }
 
   Pedido construirPedido(){
-    return Pedido(mesaONobre: mesaONombre, lineas: List.from(lineas));
+    return Pedido(mesaONombre: mesaONombre, lineas: List.from(lineas));
   }
 }

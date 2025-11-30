@@ -1,15 +1,16 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import '../model/lineaProducto.dart';
+import 'package:t4_1/model/lineaProducto.dart';
+import 'package:t4_1/viewModel/crearPedidoViewModel.dart';
+import 'package:t4_1/view/seleccionarProducto.dart';
 
 class Crearpedido extends StatefulWidget{
     const Crearpedido({super.key});
 
     @override
-    State<Crearpedido> createState()=> _CrearPedidoState();
+    State<Crearpedido> createState()=> _CrearpedidoState();
 }
 
-class _CrearPedidoState extends State<CrearPedido> {
+class _CrearpedidoState extends State<Crearpedido> {
 final Crearpedidoviewmodel viewModel = Crearpedidoviewmodel();
 final TextEditingController _mesaController = TextEditingController();
 
@@ -23,7 +24,7 @@ Future<void> _abrirSeleccionProductos()async {
     final resultado = await Navigator.push<List<LineaProducto>>(
         context,
         MaterialPageRoute(
-            builder: (context) => const SeleccionarProducto();
+            builder: (context) => const Seleccionarproducto(),
         ),
     );
 
@@ -74,19 +75,23 @@ Widget build(BuildContext context){
         body: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
-                crossAxisAlignment: CrossAxisAligment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                     TextField(
                         controller: _mesaController,
-                        decoration: const inputDecoration(
+                        decoration: const InputDecoration(
                             labelText: "Mesa o nombre",
                             border: OutlineInputBorder(),
                         ),
+                        onChanged: (value) {
+                          viewModel.mesaONombre = value;
+                        }
                     ),
                     const SizedBox(height: 16),
-                    ElevateButton.icon(
+                    ElevatedButton.icon(
                         onPressed: _abrirSeleccionProductos,
                         icon: const Icon(Icons.shopping_cart),
+                        label: const Text("Añadir productos"),
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
                             padding: const EdgeInsets.all(12),
@@ -94,15 +99,15 @@ Widget build(BuildContext context){
                     ),
                     const SizedBox(height: 24),
                     const Text(
-                        "Resumen provisional",
-                        style: TextStyle(fontSize: 18, fontWeight: fontWeight.bold),
+                        "Resumen provisional:",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 8),
                     Expanded(
                         child: viewModel.lineas.isEmpty
                         ? const Center(child: Text("No hay productos añadidos"))
                         :ListView.builder(
-                            itemCount: viewModel.lineas.lenght,
+                            itemCount: viewModel.lineas.length,
                             itemBuilder: (context, index){
                                 final linea = viewModel.lineas[index];
                                 return ListTile(
@@ -110,7 +115,7 @@ Widget build(BuildContext context){
                                     subtitle: Text("${linea.producto.precio.toStringAsFixed(2)}€ x ${linea.cantidad}",
                                     ),
                                     trailing: Text("${linea.subtotal.toStringAsFixed(2)}€",
-                                    style: const TExtStyle(fontWeight: FontWeight.bold),
+                                    style: const TextStyle(fontWeight: FontWeight.bold),
                                     ),
                                 );
                             },
@@ -121,13 +126,13 @@ Widget build(BuildContext context){
                     Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8),
                         child: Row(
-                            mainAxisAlignment: mainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                                 Text(
                                     "Total: ${viewModel.total.toStringAsFixed(2)}€",
                                     style: const TextStyle(
                                         fontSize: 20,
-                                        fontWeight: FontWeigth.bold,
+                                        fontWeight: FontWeight.bold,
 
                                     ),
                                 ),
@@ -166,7 +171,7 @@ Widget build(BuildContext context){
                     const SizedBox(height: 8),
                     ElevatedButton(
                         onPressed: ()=> Navigator.pop(context),
-                        style: ElevateButton.styleFrom(
+                        style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.red,
                             padding: const EdgeInsets.all(12),
                         ),

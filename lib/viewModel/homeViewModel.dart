@@ -1,4 +1,6 @@
-import 'package:t4_1/model/pedido.dart';
+
+
+import '../model/pedido.dart';
 
 class Homeviewmodel {
 

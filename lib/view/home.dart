@@ -1,14 +1,10 @@
-import "package:flutter/material.dart";
+
+import 'package:flutter/material.dart';
 import 'package:t4_1/model/pedido.dart';
 import 'package:t4_1/viewModel/homeViewModel.dart';
+import 'package:t4_1/view/crearPedido.dart';
 import 'package:t4_1/model/producto.dart';
 import 'package:t4_1/model/lineaProducto.dart';
-
-import '../model/lineaProducto.dart';
-import '../model/pedido.dart';
-import '../model/producto.dart';
-import '../viewModel/homeViewModel.dart';
-
 
 class Home extends StatefulWidget{
   const Home({super.key});
@@ -26,13 +22,15 @@ class _HomePageState extends State<Home>{
     super.initState();
 
     //Pedidos iniciales
-    viewModel.addPedido(Pedido(mesaONobre: "Mesa 1", lineas: [
+    viewModel.addPedido(Pedido(mesaONombre: "Mesa 1", 
+    lineas: [
       LineaProducto(producto: Producto(nombre: "Agua", precio: 1.50), cantidad: 3),
       LineaProducto(producto: Producto(nombre: "FingersDePollo", precio: 3.5), cantidad: 3),
     ],
     ));
 
-    viewModel.addPedido(Pedido(mesaONobre: "Mesa 5", lineas: [
+    viewModel.addPedido(Pedido(mesaONobre: "Mesa 5", 
+    lineas: [
       LineaProducto(producto: Producto(nombre: "CervezaEstrella", precio: 2.50), cantidad: 2),
     ],
     ));
@@ -40,7 +38,7 @@ class _HomePageState extends State<Home>{
 
   Future<void> _abrirCrearPedido() async{
     final resultado = await Navigator.push<Pedido>(
-      context, MaterialPageRoute(builder: (context) => CrearPedidoPage()),
+      context, MaterialPageRoute(builder: (context) => Crearpedido()),
     );
 
     if(!mounted)return;
@@ -56,7 +54,7 @@ class _HomePageState extends State<Home>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        titel: cosnt Text("Bar - Pedidos"),
+        title: const Text("Bar - Pedidos"),
         backgroundColor: Colors.orange,
       ),
       body: viewModel.pedidos.isEmpty
@@ -67,16 +65,16 @@ class _HomePageState extends State<Home>{
           final pedido = viewModel.pedidos[index];
           return Card(
             margin: const EdgeInsets.all(8),
-            child: ListTitel(
-              titel: Text(
-                pedido.mesaONobre,
-                style: const TextStyle(fontWeigth: fontWeigth.bold),
+            child: ListTile(
+              title: Text(
+                pedido.mesaONombre,
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               subtitle: Text("${pedido.numProductos} productos"),
               trailing: Text("${pedido.total.toStringAsFixed(2)}€",
               style: const TextStyle(
                 fontSize: 18,
-                fontWeigth: fontWeigth.bold,
+                fontWeight: FontWeight.bold,
                 color: Colors.green,
               ),
               ),
@@ -84,7 +82,7 @@ class _HomePageState extends State<Home>{
           );
         },
       ),
-      floatingActionButton: floatingActionButton.extended(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: _abrirCrearPedido,
         label: const Text("Nuevo pedido"),
         icon: const Icon(Icons.add),

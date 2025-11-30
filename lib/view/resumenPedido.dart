@@ -1,5 +1,6 @@
+
 import 'package:flutter/material.dart';
-import 'package:t4_1/model/pedido.dart';
+import '../model/pedido.dart';
 
 class ResumenPedidoPage extends StatelessWidget {
   const ResumenPedidoPage({super.key});
@@ -26,7 +27,7 @@ class ResumenPedidoPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      pedido.mesaONobre,
+                      pedido.mesaONombre,
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,

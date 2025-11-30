@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:t4_1/model/lineaProducto.dart';
-import 'package:t4_1/model/pedido.dart';
-import 'package:t4_1/model/producto.dart';
 
 import '../model/lineaProducto.dart';
 import '../model/producto.dart';
@@ -25,7 +21,7 @@ class Seleccionproductosviewmodel {
   final Map<Producto, int> cantidades = {};
 
   //Transformar map a lista
-  List<LineaProducto> cosntruirLineas(){
+  List<LineaProducto> construirLineas(){
     return cantidades.entries
       .where((entry) => entry.value >0)
       .map((entry) => LineaProducto(producto: entry.key, cantidad: entry.value,

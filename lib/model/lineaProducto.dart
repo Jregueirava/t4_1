@@ -1,4 +1,6 @@
-import 'package:t4_1/model/producto.dart';
+
+
+import 'producto.dart';
 
 class LineaProducto{
   final Producto producto;
