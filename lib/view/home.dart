@@ -29,7 +29,7 @@ class _HomePageState extends State<Home>{
     ],
     ));
 
-    viewModel.addPedido(Pedido(mesaONobre: "Mesa 5", 
+    viewModel.addPedido(Pedido(mesaONombre: "Mesa 5", 
     lineas: [
       LineaProducto(producto: Producto(nombre: "CervezaEstrella", precio: 2.50), cantidad: 2),
     ],

@@ -8,7 +8,7 @@ class Pedido {
 
   const Pedido({
     required this.mesaONombre,
-    required this.lineas, required String mesaONobre,
+    required this.lineas,
   });
 
   int get numProductos => lineas.fold(0, (acc, linea) => acc + linea.cantidad);
