@@ -1,5 +1,4 @@
 
-
 import 'producto.dart';
 
 class LineaProducto{

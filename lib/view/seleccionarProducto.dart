@@ -81,7 +81,7 @@ class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
                 //Cancelada sin datos
                 onPressed: ()=> Navigator.pop(context),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 165, 224, 231),
+                  backgroundColor: const Color.fromARGB(255, 0, 204, 255),
                   padding: const EdgeInsets.all(16),
                 ),
                 child: const Text("Cancelar"),
@@ -92,7 +92,7 @@ class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
               child: ElevatedButton(
                 onPressed: _confirmar,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 165, 224, 231),
+                  backgroundColor: const Color.fromARGB(255, 0, 204, 255),
                   padding: const EdgeInsets.all(16),
                 ),
                 child: const Text("Confirmar"),
