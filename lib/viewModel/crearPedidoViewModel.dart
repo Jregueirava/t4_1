@@ -15,6 +15,7 @@ class Crearpedidoviewmodel {
   //Suma total pedido
   double get total => lineas.fold(0.0, (acc, listaproducto) => acc + listaproducto.subtotal);
 
+  //Validación
   bool puedeGuardar(){
     return mesaONombre.trim().isNotEmpty && lineas.isNotEmpty;
   }

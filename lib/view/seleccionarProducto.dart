@@ -20,6 +20,7 @@ class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
       );
       return;
     }
+    //Devolver los productos
     Navigator.pop(context, lineas);
   }
 
@@ -77,6 +78,7 @@ class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
           children: [
             Expanded(
               child: ElevatedButton(
+                //Cancelada sin datos
                 onPressed: ()=> Navigator.pop(context),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,

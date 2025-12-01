@@ -49,11 +49,13 @@ void _verResumen(){
     Navigator.pushNamed(
         context,
         "/resumen",
+        //Ruta nombrada
         arguments: viewModel.construirPedido(),
     );
 }
 
 void _guardarPedido(){
+  //Comprobación antes de guardar
     if(!viewModel.puedeGuardar()){
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -62,6 +64,7 @@ void _guardarPedido(){
         );
         return;
     }
+    //Devuelve el pedido
     Navigator.pop(context, viewModel.construirPedido());
 }
 
@@ -84,6 +87,7 @@ Widget build(BuildContext context){
                             border: OutlineInputBorder(),
                         ),
                         onChanged: (value) {
+                          //Guardar mesa
                           viewModel.mesaONombre = value;
                         }
                     ),
@@ -170,6 +174,7 @@ Widget build(BuildContext context){
                     ),
                     const SizedBox(height: 8),
                     ElevatedButton(
+                      //Cancelar sin datos
                         onPressed: ()=> Navigator.pop(context),
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.red,
