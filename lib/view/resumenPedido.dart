@@ -12,7 +12,7 @@ class ResumenPedidoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Resumen del Pedido"),
-        backgroundColor: Colors.orange,
+        backgroundColor: const Color.fromARGB(255, 0, 217, 255),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -20,7 +20,7 @@ class ResumenPedidoPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Card(
-              color: Colors.orange.shade50,
+              color: const Color.fromARGB(255, 132, 219, 245),
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(
@@ -79,7 +79,7 @@ class ResumenPedidoPage extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.green,
+                  color: Color.fromARGB(255, 0, 217, 255),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -87,7 +87,7 @@ class ResumenPedidoPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () => Navigator.pop(context),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: const Color.fromARGB(255, 165, 224, 231),
                 padding: const EdgeInsets.all(16),
               ),
               child: const Text("Volver"),

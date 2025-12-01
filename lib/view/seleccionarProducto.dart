@@ -29,7 +29,7 @@ class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
     return Scaffold(
       appBar: AppBar(
         title: const Text("Seleccionar Productos"),
-        backgroundColor: Colors.orange,
+        backgroundColor: const Color.fromARGB(255, 0, 217, 255),
       ),
       body: ListView.builder(
         itemCount: viewModel.carta.length,
@@ -81,7 +81,7 @@ class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
                 //Cancelada sin datos
                 onPressed: ()=> Navigator.pop(context),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+                  backgroundColor: const Color.fromARGB(255, 165, 224, 231),
                   padding: const EdgeInsets.all(16),
                 ),
                 child: const Text("Cancelar"),
@@ -92,7 +92,7 @@ class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
               child: ElevatedButton(
                 onPressed: _confirmar,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
+                  backgroundColor: const Color.fromARGB(255, 165, 224, 231),
                   padding: const EdgeInsets.all(16),
                 ),
                 child: const Text("Confirmar"),

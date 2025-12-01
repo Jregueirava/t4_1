@@ -55,7 +55,7 @@ class _HomePageState extends State<Home>{
     return Scaffold(
       appBar: AppBar(
         title: const Text("Bar - Pedidos"),
-        backgroundColor: Colors.orange,
+        backgroundColor: const Color.fromARGB(255, 0, 217, 255),
       ),
       body: viewModel.pedidos.isEmpty
       ? const Center(child: Text("No hay pedidos"))
@@ -75,7 +75,7 @@ class _HomePageState extends State<Home>{
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.green,
+                color: Color.fromARGB(255, 0, 217, 255),
               ),
               ),
             ),
@@ -86,7 +86,7 @@ class _HomePageState extends State<Home>{
         onPressed: _abrirCrearPedido,
         label: const Text("Nuevo pedido"),
         icon: const Icon(Icons.add),
-        backgroundColor: Colors.orange,
+        backgroundColor: const Color.fromARGB(255, 0, 204, 255),
       ),
     );
   }

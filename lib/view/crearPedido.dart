@@ -73,7 +73,7 @@ Widget build(BuildContext context){
     return Scaffold(
         appBar: AppBar(
             title: const Text("Crear Pedido"),
-            backgroundColor: Colors.orange,
+            backgroundColor: const Color.fromARGB(255, 2, 179, 179),
         ),
         body: Padding(
             padding: const EdgeInsets.all(16),
@@ -97,7 +97,7 @@ Widget build(BuildContext context){
                         icon: const Icon(Icons.shopping_cart),
                         label: const Text("Añadir productos"),
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
+                            backgroundColor: const Color.fromARGB(255, 165, 224, 231),
                             padding: const EdgeInsets.all(12),
                         ),
                     ),
@@ -153,7 +153,7 @@ Widget build(BuildContext context){
                                 child: ElevatedButton(
                                     onPressed: _verResumen,
                                     style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.purple,
+                                        backgroundColor: const Color.fromARGB(255, 165, 224, 231),
                                         padding: const EdgeInsets.all(12),
                                     ),
                                     child: const Text("Ver resumen"),
@@ -164,7 +164,7 @@ Widget build(BuildContext context){
                                 child: ElevatedButton(
                                     onPressed: _guardarPedido,
                                     style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.green,
+                                        backgroundColor: const Color.fromARGB(255, 165, 224, 231),
                                         padding: const EdgeInsets.all(12),
                                     ),
                                     child: const Text("Guardar pedido"),
@@ -177,7 +177,7 @@ Widget build(BuildContext context){
                       //Cancelar sin datos
                         onPressed: ()=> Navigator.pop(context),
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.red,
+                            backgroundColor: const Color.fromARGB(255, 165, 224, 231),
                             padding: const EdgeInsets.all(12),
                         ),
                         child: const Text("Cancelar"),
