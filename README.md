@@ -32,13 +32,17 @@ Aplicación Flutter para gestionar pedidos de un bar de forma sencilla: crear pe
 
 ## Ejemplos de las pantallas de la APP
 ### HOME (lista de pedidos)
-! [Pantalla Home con lista de pedidos](./capturasPantalla/home.png)
+- Pantalla Home con listo de pedidos
+<img src="https://github.com/Jregueirava/t4_1/tree/main/capturasPantalla/home.png">
 
 ### CREAR PEDIDO
-![Pantalla de creación del pedido con campo mesa/nombre y resumen provisional](./capturasPantalla/crear_pedido.png)
+- Pantalla de creación de pedido con campo mesa/nombre y resumen provisional
+<img src="https://github.com/Jregueirava/t4_1/tree/main/capturasPantalla/crearPedido.png">
 
 ### Seleccionar productos
-![Pantalla selección de productos con botones + y -](./capturasPantalla/seleccionar_productos.png)
+- Pantalla selección de productos con botones + y - 
+<img src="https://github.com/Jregueirava/t4_1/tree/main/capturasPantalla/Seleccionar_productos.png">
 
 ### Resumen del pedido
-![Pantalla resumen con total y líneas del pedido](./screenshots/resumen.png)
+- Pantalla resumen con total y líneas del pedido
+<img src="https://github.com/Jregueirava/t4_1/tree/main/capturasPantalla/resumen.png">
