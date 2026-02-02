@@ -39,11 +39,11 @@ Aplicación Flutter para gestionar pedidos de un bar de forma sencilla: crear pe
 - Pantalla de creación de pedido con campo mesa/nombre y resumen provisional
 ![Crear Pedido](capturasPantalla/crearPedido.png)
 
-### Seleccionar productos
+### SELECCIONAR PRODUCTOS
 - Pantalla selección de productos con botones + y -
 ![Seleccionar productos](capturasPantalla/Seleccionar_productos.png)
 
-### Resumen del pedido
+### RESUMEN DEL PEDIDO
 - Pantalla resumen con total y líneas del pedido
 ![Resumen](capturasPantalla/resumen.png)
 
