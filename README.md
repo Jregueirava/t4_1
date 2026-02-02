@@ -46,3 +46,8 @@ Aplicación Flutter para gestionar pedidos de un bar de forma sencilla: crear pe
 ### Resumen del pedido
 - Pantalla resumen con total y líneas del pedido
 ![Resumen](capturasPantalla/resumen.png)
+
+
+## Proyecto hecho por:
+###Jesús Regueira Vázquez
+
