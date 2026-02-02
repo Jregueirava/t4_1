@@ -3,7 +3,16 @@ import 'package:t4_1/model/lineaProducto.dart';
 import 'package:t4_1/viewModel/crearPedidoViewModel.dart';
 import 'package:t4_1/view/seleccionarProducto.dart';
 
+
+/// Pantalla para crear un pedido.
+/// 
+/// Permite:
+/// - Introducir mesa/nombre.
+/// - Seleccionar productos y cantidades.
+/// - Ver un resumen provisional.
+/// - Guardar el pedido (devolviendo un  [Pedido] a la pantalla anterior).
 class Crearpedido extends StatefulWidget{
+  /// Crear la pantalla de creación de pedido.
     const Crearpedido({super.key});
 
     @override
@@ -11,11 +20,14 @@ class Crearpedido extends StatefulWidget{
 }
 
 class _CrearpedidoState extends State<Crearpedido> {
+  /// ViewModel con la lógica del pedido en construcción.
 final Crearpedidoviewmodel viewModel = Crearpedidoviewmodel();
+/// Controlador del campo de texto "Mesa o nombre".
 final TextEditingController _mesaController = TextEditingController();
 
 @override
 void dispose(){
+  
     _mesaController.dispose();
     super.dispose();
 }
