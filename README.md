@@ -49,5 +49,5 @@ Aplicación Flutter para gestionar pedidos de un bar de forma sencilla: crear pe
 
 
 ## Proyecto hecho por:
-###Jesús Regueira Vázquez
+Jesús Regueira Vázquez
 
