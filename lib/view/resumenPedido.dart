@@ -2,7 +2,13 @@
 import 'package:flutter/material.dart';
 import '../model/pedido.dart';
 
+
+/// Pantalla que muestra el resumen final de un [Pedido].
+/// 
+/// Recibe el pedido por "Navigator.pushNamed(..., arguments: pedido)" usando
+/// "ModalRoute.of(context)!.settings.arguments".
 class ResumenPedidoPage extends StatelessWidget {
+  /// Crea la pantalla de resumen
   const ResumenPedidoPage({super.key});
 
   @override

@@ -2,7 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:t4_1/viewModel/seleccionProductosViewModel.dart';
 
+
+/// Pantalla para seleccionar productos de la carta y sus cantidades.
+/// 
+/// El usuario incrementa/decrementa cantidades y confirma para devolver
+/// las líneas seleccionadas a la pantalla anterior.
 class Seleccionarproducto extends StatefulWidget {
+  /// Crea la pantalla de selección de productos.
   const Seleccionarproducto({super.key});
 
   @override
@@ -10,8 +16,13 @@ class Seleccionarproducto extends StatefulWidget {
 }
 
 class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
+  /// ViewModel con la carta y las cantidades selccionadas.
   final Seleccionproductosviewmodel viewModel = Seleccionproductosviewmodel();
 
+/// Confirma la selección actual.
+/// 
+/// Si no hay productos seleccionados, muestra un [SnackBar].
+/// Si hay selección, devuelve la lista de líneas con "Navigator.pop(...)".
   void _confirmar(){
     final lineas = viewModel.construirLineas();
     if(lineas.isEmpty){

@@ -32,6 +32,10 @@ void dispose(){
     super.dispose();
 }
 
+/// Abre la pantalla de selección de producto y espera un resultado.
+/// 
+/// Si el usuario confirma, recibimos una lista de [LineaProducto] y la guardamos
+/// en el [viewModel] para actualizar el resumen provisional.
 Future<void> _abrirSeleccionProductos()async {
     final resultado = await Navigator.push<List<LineaProducto>>(
         context,
@@ -49,6 +53,9 @@ Future<void> _abrirSeleccionProductos()async {
     }
 }
 
+/// Navega a la pantalla de resumen del pedido.
+/// 
+/// Si el pedido no es válido, muestra un [SnackBar] para informar al usuario.
 void _verResumen(){
     if(!viewModel.puedeGuardar()){
         ScaffoldMessenger.of(context).showSnackBar(
@@ -66,6 +73,9 @@ void _verResumen(){
     );
 }
 
+/// Guarda el pedido actual y lo devuelve a la pantalla anterior.
+/// 
+/// Si el pedido no es válido, muestra un [SnackBar] y no cierra la pantalla.
 void _guardarPedido(){
   //Comprobación antes de guardar
     if(!viewModel.puedeGuardar()){

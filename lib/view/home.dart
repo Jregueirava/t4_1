@@ -6,7 +6,13 @@ import 'package:t4_1/view/crearPedido.dart';
 import 'package:t4_1/model/producto.dart';
 import 'package:t4_1/model/lineaProducto.dart';
 
+
+/// Pantalla principal de la app
+/// 
+/// Muestra la lista de pedidos existentes y permite crear uno nuevo.
+/// Cuando se crea un pedido, se añade a la lista mediante [Homeviewmodel].
 class Home extends StatefulWidget{
+  /// Crea la pantalla principal
   const Home({super.key});
 
   @override
@@ -14,7 +20,9 @@ class Home extends StatefulWidget{
 
 }
 
+
 class _HomePageState extends State<Home>{
+  /// ViewModel que mantiene la lista de pedidos.
   final Homeviewmodel viewModel = Homeviewmodel();
 
   @override
@@ -36,6 +44,9 @@ class _HomePageState extends State<Home>{
     ));
   }
 
+/// Abre la pantalla de crear pedido y espera el [Pedido] resultante.
+/// 
+/// Si el usuario guarda, la pantalla devuelve un [Pedido] y lo añadimos a la lista.
   Future<void> _abrirCrearPedido() async{
     final resultado = await Navigator.push<Pedido>(
       context, MaterialPageRoute(builder: (context) => Crearpedido()),
