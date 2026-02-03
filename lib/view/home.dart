@@ -94,6 +94,7 @@ class _HomePageState extends State<Home>{
         },
       ),
       floatingActionButton: FloatingActionButton.extended(
+        tooltip: "Crea un pedido nuevo", // Tooltip integrado
         onPressed: _abrirCrearPedido,
         label: const Text("Nuevo pedido"),
         icon: const Icon(Icons.add),

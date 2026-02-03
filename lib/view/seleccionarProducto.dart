@@ -55,6 +55,7 @@ class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
+                    tooltip: "Quitar una unidad", // Tooltip 
                     onPressed: (){
                       setState((){
                         viewModel.decrementar(producto);
@@ -69,6 +70,7 @@ class _SeleccionarProductoPageState extends State<Seleccionarproducto>{
                   ),
                   ),
                   IconButton(
+                    tooltip: "Añadir una cantidad", // Tooltip
                     onPressed: (){
                       setState((){
                         viewModel.incrementar(producto);
